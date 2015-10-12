@@ -1,0 +1,10 @@
+*.swp
+res/*
+data/fold/original/*
+data/inter/*
+data/old-sim/*
+data/*/wiki*.txt
+data/*/cessm*.txt
+.DS_store
+run
+encode
