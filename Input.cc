@@ -24,14 +24,14 @@ void ReadGraph(char file[], Graph &G, int fold) {
 
 typedef map<int,map<int,double> > TableSim;
 
-void ReadSim(char file[], Graph &G, TableSim &T) {
+void ReadSim(char file[], Graph &G, TableSim &T, double threshold) {
 
 	FILE *src = fopen(file,"r");
 
 	double sim;
 	char a[200], b[200];
 	while ( fscanf(src,"%s\t%s\t%lf\n",a,b,&sim) != EOF )
-		T[G.InternalID(a)][G.InternalID(b)] = sim;
+		T[G.InternalID(a)][G.InternalID(b)] = (sim<threshold ? 0.0 : sim);
 
 	//char s[200], sep;
 	//vector<int> ind;

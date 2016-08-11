@@ -74,13 +74,13 @@ class Subgraph {
 				vI.push_back(i);
 
 		// Subgraph Edges
-		//for (int i=0 ; i<G.V ; i++) {
-		//	if (!S[i] || G.isIn(i)) continue;
-		//	for (int j=0 ; j<G[i].size() ; j++) {
-		//		if (!S[G[i][j]]) continue;
-		//		cout << G.ExternalID(i) << "\t" << G.ExternalID(G[i][j]) << "\tR\t" << (sim[i]+sim[G[i][j]])/2 << endl;
-		//	}
-		//}
+		for (int i=0 ; i<G.V ; i++) {
+			if (!S[i] || G.isIn(i)) continue;
+			for (int j=0 ; j<G[i].size() ; j++) {
+				if (!S[G[i][j]]) continue;
+				cout << G.ExternalID(i) << "\t" << G.ExternalID(G[i][j]) << "\tR\t" << (sim[i]+sim[G[i][j]])/2 << endl;
+			}
+		}
 
 		// Subgraph Missing Edges
 		//cerr << "> Missing E\'s   " << I*O-E << endl;
@@ -90,9 +90,11 @@ class Subgraph {
 			for (int j=0 ; j<vI.size() ; j++) {
 				it = find(G[i].begin(),G[i].end(),vI[j]);
 				if (it==G[i].end())
-					cout << G.ExternalID(i) << "\t" << G.ExternalID(vI[j]) << "\tP\t" << (sim[i]+sim[vI[j]])/2 << "\t" << ((double)E/(I*O) + (sim[i]+sim[vI[j]])/2)/2 << endl;
+					cout << G.ExternalID(i) << "\t" << G.ExternalID(vI[j]) << "\tP\t" << (sim[i]+sim[vI[j]])/2 << endl;
 			}
 		}
+
+		cout << "----------" << endl;
 
 		// Density
 		//cerr << "> Density       " << E/sqrt(I*O) << endl;
