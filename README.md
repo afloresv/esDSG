@@ -33,7 +33,7 @@ The following is an example of a `.pred` file. For each subgraph computed, the p
 
 ### Extra data (.tsv)
 
-The following is an example of a `.tsv` file. The first line contains the column names, followed by a number of rows. Each row details each subgraph computed: The number of _in_ nodes (`I`), _out_ nodes (`O`), total nodes (`V`), edges (`E`), missing/predicted edges (`M`), the density of the subgraph (`D`), the es-Density of the subgraph (`esDSG`), and the time (millisecond) where that subgraph was computed (`time`).
+The following is an example of a `.tsv` file. The first line contains the column names, followed by a number of rows. Each row details each subgraph computed: The number of _in_ nodes (`I`), _out_ nodes (`O`), total nodes (`V`), edges (`E`), missing/predicted edges (`M`), the density of the subgraph (`D`), the es-Density of the subgraph (`esD`), and the time (millisecond) where that subgraph was computed (`time`).
 
 	I	O	V	E	M	D	esD	time
 	20	11	31	105	115	7.0791	2.59637	789
